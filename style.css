@@ -3,25 +3,42 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #000000;
+
+    background: #F5F5DC;
+
     font-family: Arial, sans-serif;
 }
 
+
 .calculator {
-    background: #d2d8d3;
+    background: #333333;
+
     padding: 20px;
     border-radius: 15px;
     width: 300px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
+
 
 #display {
     width: 100%;
     height: 60px;
+
     font-size: 30px;
     text-align: right;
+
     margin-bottom: 15px;
     box-sizing: border-box;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 10px;
 }
+
+
+/* ===== BUTTONS ===== */
 
 .buttons {
     display: grid;
@@ -29,22 +46,50 @@ body {
     gap: 10px;
 }
 
+
 button {
     height: 60px;
-    font-size: 22px;
-     background: #D2B48C; /* ← BUTTON COLOUR */
 
-    color: #f50b0b; /* ← BUTTON TEXT COLOUR */
+    font-size: 22px;
+
+    background: #D2B48C;
+    color: #000000;
+
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
+
     cursor: pointer;
+
+    /* SMOOTH ANIMATION */
+    transition:
+        transform 0.12s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
 }
+
+
+/* MOUSE OVER */
 
 button:hover {
-    background: #da9f0c;
-    transform: scale(1.5);
+    transform: translateY(-2px);
+
+    background: #E8CFA8;
+
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
+
+/* BUTTON PRESS */
+
 button:active {
-    transform: scale(0.95);
+    transform: scale(0.94);
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.zero {
+    grid-column: span 2;
 }
